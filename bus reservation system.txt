@@ -1,0 +1,976 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import java.awt.BorderLayout;
+import javax.swing.JPanel;
+import javax.swing.border.BevelBorder;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
+import java.awt.Font;
+import javax.swing.JRadioButton;
+import javax.swing.SwingConstants;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JSeparator;
+import javax.swing.JButton;
+import javax.swing.JTextField;
+import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+public class Frame1 {
+
+	private JFrame frame;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
+	private JTextField textField_3;
+	private JTextField textField_4;
+	private JTextField textField_5;
+	private JTextField textField_6;
+	private JTextField textField_7;
+	private JTextField textField_8;
+	private JTextField textField_9;
+	private JTextField textField_10;
+	private JTextField textField_11;
+	private JTextField textField_12;
+	private JTextField textField_13;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Frame1 window = new Frame1();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Frame1() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(0, 0, 1370, 700);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		panel.setBounds(12, 29, 1289, 77);
+		frame.getContentPane().add(panel);
+		
+		JLabel lblNewLabel = new JLabel("Bus Reservation System");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 50));
+		panel.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("Ticket Type");
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 40));
+		lblNewLabel_1.setBounds(81, 107, 398, 86);
+		frame.getContentPane().add(lblNewLabel_1);
+		
+		JRadioButton rdbtnEconomy = new JRadioButton("Economy");
+		rdbtnEconomy.setFont(new Font("Tahoma", Font.BOLD, 30));
+		rdbtnEconomy.setBounds(36, 251, 165, 48);
+		frame.getContentPane().add(rdbtnEconomy);
+		
+		JRadioButton rdbtnStandard = new JRadioButton("Standard");
+		rdbtnStandard.setFont(new Font("Tahoma", Font.BOLD, 30));
+		rdbtnStandard.setBounds(36, 194, 165, 59);
+		frame.getContentPane().add(rdbtnStandard);
+		
+		JRadioButton rdbtnFirstClass = new JRadioButton("First Class");
+		rdbtnFirstClass.setFont(new Font("Tahoma", Font.BOLD, 30));
+		rdbtnFirstClass.setBounds(36, 293, 200, 59);
+		frame.getContentPane().add(rdbtnFirstClass);
+		
+		JRadioButton rdbtnReturn = new JRadioButton("Return");
+		rdbtnReturn.setFont(new Font("Tahoma", Font.BOLD, 30));
+		rdbtnReturn.setBounds(240, 253, 153, 45);
+		frame.getContentPane().add(rdbtnReturn);
+		
+		JRadioButton rdbtnSingle = new JRadioButton("Single");
+		rdbtnSingle.setFont(new Font("Tahoma", Font.BOLD, 30));
+		rdbtnSingle.setBounds(240, 202, 127, 51);
+		frame.getContentPane().add(rdbtnSingle);
+		
+		JRadioButton rdbtnChild = new JRadioButton("Child");
+		rdbtnChild.setFont(new Font("Tahoma", Font.BOLD, 30));
+		rdbtnChild.setBounds(397, 258, 127, 35);
+		frame.getContentPane().add(rdbtnChild);
+		
+		JRadioButton rdbtnAdult = new JRadioButton("Adult");
+		rdbtnAdult.setFont(new Font("Tahoma", Font.BOLD, 30));
+		rdbtnAdult.setBounds(397, 208, 127, 31);
+		frame.getContentPane().add(rdbtnAdult);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setToolTipText("Select Destination");
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Destination", "Puri", "Darjeeling", "Gangtok"}));
+		comboBox.setFont(new Font("Tahoma", Font.BOLD, 30));
+		comboBox.setBounds(267, 298, 212, 48);
+		frame.getContentPane().add(comboBox);
+		
+		JSeparator separator = new JSeparator();
+		separator.setBounds(36, 181, 471, 12);
+		frame.getContentPane().add(separator);
+		
+		JSeparator separator_1 = new JSeparator();
+		separator_1.setBounds(54, 377, 475, 12);
+		frame.getContentPane().add(separator_1);
+		
+		JLabel lblTax = new JLabel("TAX");
+		lblTax.setFont(new Font("Tahoma", Font.BOLD, 30));
+		lblTax.setBounds(54, 383, 115, 28);
+		frame.getContentPane().add(lblTax);
+		
+		JLabel lblSubtotal = new JLabel("SUBTOTAL");
+		lblSubtotal.setFont(new Font("Tahoma", Font.BOLD, 30));
+		lblSubtotal.setBounds(54, 424, 162, 31);
+		frame.getContentPane().add(lblSubtotal);
+		
+		JLabel lblTotal = new JLabel("TOTAL");
+		lblTotal.setFont(new Font("Tahoma", Font.BOLD, 30));
+		lblTotal.setBounds(54, 467, 127, 31);
+		frame.getContentPane().add(lblTotal);
+		
+		JSeparator separator_2 = new JSeparator();
+		separator_2.setBounds(54, 507, 475, 12);
+		frame.getContentPane().add(separator_2);
+		
+		JButton btnTotal = new JButton("TOTAL");
+		btnTotal.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				double tax=19.50;
+				double MilesK8=25.75;
+				double MilesK12=25.09;
+				double MilesK20=45.23;
+				double totalCost,eco=3.85,fclass=5.60;
+				
+				if ((rdbtnStandard.isSelected()) && (rdbtnSingle.isSelected()) && (rdbtnAdult.isSelected()) && comboBox.getSelectedItem().equals("Puri"))
+				{
+					totalCost =(tax *MilesK8)/100;
+					String sTax= String.format("$%.2f", totalCost);
+					textField.setText(sTax);
+					String subTotal= String.format("$%.2f", MilesK8);
+					textField_1.setText(subTotal);
+					String Total=String.format("$%.2f", MilesK8+totalCost);
+					textField_2.setText(Total);
+					textField_12.setText(Total);
+					textField_3.setText("STD");
+					textField_4.setText("ONE WAY");
+					textField_5.setText("ONE");
+					textField_6.setText("NIL");
+				}
+				else if ((rdbtnStandard.isSelected()) && (rdbtnReturn.isSelected()) && (rdbtnAdult.isSelected()) && comboBox.getSelectedItem().equals("Puri"))
+				{
+					totalCost =(tax *MilesK8)/100;
+					String sTax= String.format("$%.2f", totalCost);
+					textField.setText(sTax);
+					String subTotal= String.format("$%.2f", MilesK8*2);
+					textField_1.setText(subTotal);
+					String Total=String.format("$%.2f", (MilesK8+totalCost)*2);
+					textField_2.setText(Total);
+					textField_12.setText(Total);
+					textField_3.setText("STD");
+					textField_4.setText("RETURN");
+					textField_5.setText("ONE");
+					textField_6.setText("NIL");
+				}
+				else if ((rdbtnStandard.isSelected()) && (rdbtnReturn.isSelected()) && (rdbtnChild.isSelected()) && comboBox.getSelectedItem().equals("Puri"))
+				{
+					totalCost =(tax *MilesK8)/100;
+					String sTax= String.format("$%.2f", totalCost-18);
+					textField.setText(sTax);
+					String subTotal= String.format("$%.2f", MilesK8*2);
+					textField_1.setText(subTotal);
+					String Total=String.format("$%.2f", ((MilesK8+totalCost)*2)-18);
+					textField_2.setText(Total);
+					textField_12.setText(Total);
+					textField_3.setText("STD");
+					textField_4.setText("RETURN");
+					textField_5.setText("NIL");
+					textField_6.setText("ONE");
+				}
+				else if ((rdbtnStandard.isSelected()) && (rdbtnSingle.isSelected()) && (rdbtnChild.isSelected()) && comboBox.getSelectedItem().equals("Puri"))
+				{
+					totalCost =(tax *MilesK8)/100;
+					String sTax= String.format("$%.2f", totalCost-18);
+					textField.setText(sTax);
+					String subTotal= String.format("$%.2f", MilesK8);
+					textField_1.setText(subTotal);
+					String Total=String.format("$%.2f", (MilesK8+totalCost)-18);
+					textField_2.setText(Total);
+					textField_12.setText(Total);
+					textField_3.setText("STD");
+					textField_4.setText("SINGLE");
+					textField_5.setText("NIL");
+					textField_6.setText("ONE");
+				}
+				else if ((rdbtnEconomy.isSelected()) && (rdbtnSingle.isSelected()) && (rdbtnAdult.isSelected()) && comboBox.getSelectedItem().equals("Puri"))
+				{
+					totalCost =(tax *MilesK8*eco)/100;
+					String sTax= String.format("$%.2f", totalCost);
+					textField.setText(sTax);
+					String subTotal= String.format("$%.2f", MilesK8);
+					textField_1.setText(subTotal);
+					String Total=String.format("$%.2f", MilesK8+totalCost);
+					textField_2.setText(Total);
+					textField_12.setText(Total);
+					textField_3.setText("ECONOMY");
+					textField_4.setText("ONE WAY");
+					textField_5.setText("ONE");
+					textField_6.setText("NIL");
+				}
+				else if ((rdbtnEconomy.isSelected()) && (rdbtnReturn.isSelected()) && (rdbtnAdult.isSelected()) && comboBox.getSelectedItem().equals("Puri"))
+				{
+					totalCost =(tax *MilesK8*eco)/100;
+					String sTax= String.format("$%.2f", totalCost);
+					textField.setText(sTax);
+					String subTotal= String.format("$%.2f", MilesK8*2);
+					textField_1.setText(subTotal);
+					String Total=String.format("$%.2f", (MilesK8+totalCost)*2);
+					textField_2.setText(Total);
+					textField_12.setText(Total);
+					textField_3.setText("ECONOMY");
+					textField_4.setText("RETURN");
+					textField_5.setText("ONE");
+					textField_6.setText("NIL");
+				}
+				else if ((rdbtnEconomy.isSelected()) && (rdbtnReturn.isSelected()) && (rdbtnChild.isSelected()) && comboBox.getSelectedItem().equals("Puri"))
+				{
+					totalCost =(tax *MilesK8*eco)/100;
+					String sTax= String.format("$%.2f", totalCost-18);
+					textField.setText(sTax);
+					String subTotal= String.format("$%.2f", MilesK8*2);
+					textField_1.setText(subTotal);
+					String Total=String.format("$%.2f", ((MilesK8+totalCost)*2)-18);
+					textField_2.setText(Total);
+					textField_12.setText(Total);
+					textField_3.setText("ECONOMY");
+					textField_4.setText("RETURN");
+					textField_5.setText("NIL");
+					textField_6.setText("ONE");
+				}
+				else if ((rdbtnEconomy.isSelected()) && (rdbtnSingle.isSelected()) && (rdbtnChild.isSelected()) && comboBox.getSelectedItem().equals("Puri"))
+				{
+					totalCost =(tax *MilesK8*eco)/100;
+					String sTax= String.format("$%.2f", totalCost-18);
+					textField.setText(sTax);
+					String subTotal= String.format("$%.2f", MilesK8);
+					textField_1.setText(subTotal);
+					String Total=String.format("$%.2f", (MilesK8+totalCost)-18);
+					textField_2.setText(Total);
+					textField_12.setText(Total);
+					textField_3.setText("FIRST CLASS");
+					textField_4.setText("SINGLE");
+					textField_5.setText("NIL");
+					textField_6.setText("ONE");
+				}
+				else if ((rdbtnFirstClass.isSelected()) && (rdbtnSingle.isSelected()) && (rdbtnAdult.isSelected()) && comboBox.getSelectedItem().equals("Puri"))
+				{
+					totalCost =(tax *MilesK8*fclass)/100;
+					String sTax= String.format("$%.2f", totalCost);
+					textField.setText(sTax);
+					String subTotal= String.format("$%.2f", MilesK8);
+					textField_1.setText(subTotal);
+					String Total=String.format("$%.2f", MilesK8+totalCost);
+					textField_2.setText(Total);
+					textField_12.setText(Total);
+					textField_3.setText("FIRST CLASS");
+					textField_4.setText("ONE WAY");
+					textField_5.setText("ONE");
+					textField_6.setText("NIL");
+				}
+				else if ((rdbtnFirstClass.isSelected()) && (rdbtnReturn.isSelected()) && (rdbtnAdult.isSelected()) && comboBox.getSelectedItem().equals("Puri"))
+				{
+					totalCost =(tax *MilesK8*fclass)/100;
+					String sTax= String.format("$%.2f", totalCost);
+					textField.setText(sTax);
+					String subTotal= String.format("$%.2f", MilesK8*2);
+					textField_1.setText(subTotal);
+					String Total=String.format("$%.2f", (MilesK8+totalCost)*2);
+					textField_2.setText(Total);
+					textField_12.setText(Total);
+					textField_3.setText("FIRST CLASS");
+					textField_4.setText("RETURN");
+					textField_5.setText("ONE");
+					textField_6.setText("NIL");
+				}
+				else if ((rdbtnFirstClass.isSelected()) && (rdbtnReturn.isSelected()) && (rdbtnChild.isSelected()) && comboBox.getSelectedItem().equals("Puri"))
+				{
+					totalCost =(tax *MilesK8*fclass)/100;
+					String sTax= String.format("$%.2f", totalCost-18);
+					textField.setText(sTax);
+					String subTotal= String.format("$%.2f", MilesK8*2);
+					textField_1.setText(subTotal);
+					String Total=String.format("$%.2f", ((MilesK8+totalCost)*2)-18);
+					textField_2.setText(Total);
+					textField_12.setText(Total);
+					textField_3.setText("FIRST CLASS");
+					textField_4.setText("RETURN");
+					textField_5.setText("NIL");
+					textField_6.setText("ONE");
+				}
+				else if ((rdbtnFirstClass.isSelected()) && (rdbtnSingle.isSelected()) && (rdbtnChild.isSelected()) && comboBox.getSelectedItem().equals("Puri"))
+				{
+					totalCost =(tax *MilesK8*fclass)/100;
+					String sTax= String.format("$%.2f", totalCost-18);
+					textField.setText(sTax);
+					String subTotal= String.format("$%.2f", MilesK8);
+					textField_1.setText(subTotal);
+					String Total=String.format("$%.2f", (MilesK8+totalCost)-18);
+					textField_2.setText(Total);
+					textField_12.setText(Total);
+					textField_3.setText("FIRST CLASS");
+					textField_4.setText("SINGLE");
+					textField_5.setText("NIL");
+					textField_6.setText("ONE");
+				}
+				else if ((rdbtnStandard.isSelected()) && (rdbtnSingle.isSelected()) && (rdbtnAdult.isSelected()) && comboBox.getSelectedItem().equals("Darjeeling"))
+				{
+					totalCost =(tax *MilesK12)/100;
+					String sTax= String.format("$%.2f", totalCost);
+					textField.setText(sTax);
+					String subTotal= String.format("$%.2f", MilesK12);
+					textField_1.setText(subTotal);
+					String Total=String.format("$%.2f", MilesK12+totalCost);
+					textField_2.setText(Total);
+					textField_12.setText(Total);
+					textField_3.setText("STD");
+					textField_4.setText("ONE WAY");
+					textField_5.setText("ONE");
+					textField_6.setText("NIL");
+				}
+				else if ((rdbtnStandard.isSelected()) && (rdbtnReturn.isSelected()) && (rdbtnAdult.isSelected()) && comboBox.getSelectedItem().equals("Darjeeling"))
+				{
+					totalCost =(tax *MilesK12)/100;
+					String sTax= String.format("$%.2f", totalCost);
+					textField.setText(sTax);
+					String subTotal= String.format("$%.2f", MilesK12*2);
+					textField_1.setText(subTotal);
+					String Total=String.format("$%.2f", (MilesK12+totalCost)*2);
+					textField_2.setText(Total);
+					textField_12.setText(Total);
+					textField_3.setText("STD");
+					textField_4.setText("RETURN");
+					textField_5.setText("ONE");
+					textField_6.setText("NIL");
+				}
+				else if ((rdbtnStandard.isSelected()) && (rdbtnReturn.isSelected()) && (rdbtnChild.isSelected()) && comboBox.getSelectedItem().equals("Darjeeling"))
+				{
+					totalCost =(tax *MilesK12)/100;
+					String sTax= String.format("$%.2f", totalCost-18);
+					textField.setText(sTax);
+					String subTotal= String.format("$%.2f", MilesK12*2);
+					textField_1.setText(subTotal);
+					String Total=String.format("$%.2f", ((MilesK12+totalCost)*2)-18);
+					textField_2.setText(Total);
+					textField_12.setText(Total);
+					textField_3.setText("STD");
+					textField_4.setText("RETURN");
+					textField_5.setText("NIL");
+					textField_6.setText("ONE");
+				}
+				else if ((rdbtnStandard.isSelected()) && (rdbtnSingle.isSelected()) && (rdbtnChild.isSelected()) && comboBox.getSelectedItem().equals("Darjeeling"))
+				{
+					totalCost =(tax *MilesK12)/100;
+					String sTax= String.format("$%.2f", totalCost-18);
+					textField.setText(sTax);
+					String subTotal= String.format("$%.2f", MilesK12);
+					textField_1.setText(subTotal);
+					String Total=String.format("$%.2f", (MilesK12+totalCost)-18);
+					textField_2.setText(Total);
+					textField_12.setText(Total);
+					textField_3.setText("STD");
+					textField_4.setText("SINGLE");
+					textField_5.setText("NIL");
+					textField_6.setText("ONE");
+				}
+				else if ((rdbtnEconomy.isSelected()) && (rdbtnSingle.isSelected()) && (rdbtnAdult.isSelected()) && comboBox.getSelectedItem().equals("Darjeeling"))
+				{
+					totalCost =(tax *MilesK12*eco)/100;
+					String sTax= String.format("$%.2f", totalCost);
+					textField.setText(sTax);
+					String subTotal= String.format("$%.2f", MilesK12);
+					textField_1.setText(subTotal);
+					String Total=String.format("$%.2f", MilesK12+totalCost);
+					textField_2.setText(Total);
+					textField_12.setText(Total);
+					textField_3.setText("ECONOMY");
+					textField_4.setText("ONE WAY");
+					textField_5.setText("ONE");
+					textField_6.setText("NIL");
+				}
+				else if ((rdbtnEconomy.isSelected()) && (rdbtnReturn.isSelected()) && (rdbtnAdult.isSelected()) && comboBox.getSelectedItem().equals("Darjeeling"))
+				{
+					totalCost =(tax *MilesK12*eco)/100;
+					String sTax= String.format("$%.2f", totalCost);
+					textField.setText(sTax);
+					String subTotal= String.format("$%.2f", MilesK12*2);
+					textField_1.setText(subTotal);
+					String Total=String.format("$%.2f", (MilesK12+totalCost)*2);
+					textField_2.setText(Total);
+					textField_12.setText(Total);
+					textField_3.setText("ECONOMY");
+					textField_4.setText("RETURN");
+					textField_5.setText("ONE");
+					textField_6.setText("NIL");
+				}
+				else if ((rdbtnEconomy.isSelected()) && (rdbtnReturn.isSelected()) && (rdbtnChild.isSelected()) && comboBox.getSelectedItem().equals("Darjeeling"))
+				{
+					totalCost =(tax *MilesK12*eco)/100;
+					String sTax= String.format("$%.2f", totalCost-18);
+					textField.setText(sTax);
+					String subTotal= String.format("$%.2f", MilesK12*2);
+					textField_1.setText(subTotal);
+					String Total=String.format("$%.2f", ((MilesK12+totalCost)*2)-18);
+					textField_2.setText(Total);
+					textField_12.setText(Total);
+					textField_3.setText("ECONOMY");
+					textField_4.setText("RETURN");
+					textField_5.setText("NIL");
+					textField_6.setText("ONE");
+				}
+				else if ((rdbtnEconomy.isSelected()) && (rdbtnSingle.isSelected()) && (rdbtnChild.isSelected()) && comboBox.getSelectedItem().equals("Darjeeling"))
+				{
+					totalCost =(tax *MilesK12*eco)/100;
+					String sTax= String.format("$%.2f", totalCost-18);
+					textField.setText(sTax);
+					String subTotal= String.format("$%.2f", MilesK12);
+					textField_1.setText(subTotal);
+					String Total=String.format("$%.2f", (MilesK12+totalCost)-18);
+					textField_2.setText(Total);
+					textField_12.setText(Total);
+					textField_3.setText("FIRST CLASS");
+					textField_4.setText("SINGLE");
+					textField_5.setText("NIL");
+					textField_6.setText("ONE");
+				}
+				else if ((rdbtnFirstClass.isSelected()) && (rdbtnSingle.isSelected()) && (rdbtnAdult.isSelected()) && comboBox.getSelectedItem().equals("Darjeeling"))
+				{
+					totalCost =(tax *MilesK12*fclass)/100;
+					String sTax= String.format("$%.2f", totalCost);
+					textField.setText(sTax);
+					String subTotal= String.format("$%.2f", MilesK12);
+					textField_1.setText(subTotal);
+					String Total=String.format("$%.2f", MilesK12+totalCost);
+					textField_2.setText(Total);
+					textField_12.setText(Total);
+					textField_3.setText("FIRST CLASS");
+					textField_4.setText("ONE WAY");
+					textField_5.setText("ONE");
+					textField_6.setText("NIL");
+				}
+				else if ((rdbtnFirstClass.isSelected()) && (rdbtnReturn.isSelected()) && (rdbtnAdult.isSelected()) && comboBox.getSelectedItem().equals("Darjeeling"))
+				{
+					totalCost =(tax *MilesK12*fclass)/100;
+					String sTax= String.format("$%.2f", totalCost);
+					textField.setText(sTax);
+					String subTotal= String.format("$%.2f", MilesK12*2);
+					textField_1.setText(subTotal);
+					String Total=String.format("$%.2f", (MilesK12+totalCost)*2);
+					textField_2.setText(Total);
+					textField_12.setText(Total);
+					textField_3.setText("FIRST CLASS");
+					textField_4.setText("RETURN");
+					textField_5.setText("ONE");
+					textField_6.setText("NIL");
+				}
+				else if ((rdbtnFirstClass.isSelected()) && (rdbtnReturn.isSelected()) && (rdbtnChild.isSelected()) && comboBox.getSelectedItem().equals("Darjeeling"))
+				{
+					totalCost =(tax *MilesK12*fclass)/100;
+					String sTax= String.format("$%.2f", totalCost-18);
+					textField.setText(sTax);
+					String subTotal= String.format("$%.2f", MilesK12*2);
+					textField_1.setText(subTotal);
+					String Total=String.format("$%.2f", ((MilesK12+totalCost)*2)-18);
+					textField_2.setText(Total);
+					textField_12.setText(Total);
+					textField_3.setText("FIRST CLASS");
+					textField_4.setText("RETURN");
+					textField_5.setText("NIL");
+					textField_6.setText("ONE");
+				}
+				else if ((rdbtnFirstClass.isSelected()) && (rdbtnSingle.isSelected()) && (rdbtnChild.isSelected()) && comboBox.getSelectedItem().equals("Darjeeling"))
+				{
+					totalCost =(tax *MilesK12*fclass)/100;
+					String sTax= String.format("$%.2f", totalCost-18);
+					textField.setText(sTax);
+					String subTotal= String.format("$%.2f", MilesK12);
+					textField_1.setText(subTotal);
+					String Total=String.format("$%.2f", (MilesK12+totalCost)-18);
+					textField_2.setText(Total);
+					textField_12.setText(Total);
+					textField_3.setText("FIRST CLASS");
+					textField_4.setText("SINGLE");
+					textField_5.setText("NIL");
+					textField_6.setText("ONE");
+				}
+				else if ((rdbtnStandard.isSelected()) && (rdbtnSingle.isSelected()) && (rdbtnAdult.isSelected()) && comboBox.getSelectedItem().equals("Gangtok"))
+				{
+					totalCost =(tax *MilesK20)/100;
+					String sTax= String.format("$%.2f", totalCost);
+					textField.setText(sTax);
+					String subTotal= String.format("$%.2f", MilesK20);
+					textField_1.setText(subTotal);
+					String Total=String.format("$%.2f", MilesK20+totalCost);
+					textField_2.setText(Total);
+					textField_12.setText(Total);
+					textField_3.setText("STD");
+					textField_4.setText("ONE WAY");
+					textField_5.setText("ONE");
+					textField_6.setText("NIL");
+				}
+				else if ((rdbtnStandard.isSelected()) && (rdbtnReturn.isSelected()) && (rdbtnAdult.isSelected()) && comboBox.getSelectedItem().equals("Gangtok"))
+				{
+					totalCost =(tax *MilesK20)/100;
+					String sTax= String.format("$%.2f", totalCost);
+					textField.setText(sTax);
+					String subTotal= String.format("$%.2f", MilesK20*2);
+					textField_1.setText(subTotal);
+					String Total=String.format("$%.2f", (MilesK20+totalCost)*2);
+					textField_2.setText(Total);
+					textField_12.setText(Total);
+					textField_3.setText("STD");
+					textField_4.setText("RETURN");
+					textField_5.setText("ONE");
+					textField_6.setText("NIL");
+				}
+				else if ((rdbtnStandard.isSelected()) && (rdbtnReturn.isSelected()) && (rdbtnChild.isSelected()) && comboBox.getSelectedItem().equals("Gangtok"))
+				{
+					totalCost =(tax *MilesK20)/100;
+					String sTax= String.format("$%.2f", totalCost-18);
+					textField.setText(sTax);
+					String subTotal= String.format("$%.2f", MilesK20*2);
+					textField_1.setText(subTotal);
+					String Total=String.format("$%.2f", ((MilesK20+totalCost)*2)-18);
+					textField_2.setText(Total);
+					textField_12.setText(Total);
+					textField_3.setText("STD");
+					textField_4.setText("RETURN");
+					textField_5.setText("NIL");
+					textField_6.setText("ONE");
+				}
+				else if ((rdbtnStandard.isSelected()) && (rdbtnSingle.isSelected()) && (rdbtnChild.isSelected()) && comboBox.getSelectedItem().equals("Gangtok"))
+				{
+					totalCost =(tax *MilesK20)/100;
+					String sTax= String.format("$%.2f", totalCost-18);
+					textField.setText(sTax);
+					String subTotal= String.format("$%.2f", MilesK20);
+					textField_1.setText(subTotal);
+					String Total=String.format("$%.2f", (MilesK20+totalCost)-18);
+					textField_2.setText(Total);
+					textField_12.setText(Total);
+					textField_3.setText("STD");
+					textField_4.setText("SINGLE");
+					textField_5.setText("NIL");
+					textField_6.setText("ONE");
+				}
+				else if ((rdbtnEconomy.isSelected()) && (rdbtnSingle.isSelected()) && (rdbtnAdult.isSelected()) && comboBox.getSelectedItem().equals("Gangtok"))
+				{
+					totalCost =(tax *MilesK20*eco)/100;
+					String sTax= String.format("$%.2f", totalCost);
+					textField.setText(sTax);
+					String subTotal= String.format("$%.2f", MilesK20);
+					textField_1.setText(subTotal);
+					String Total=String.format("$%.2f", MilesK20+totalCost);
+					textField_2.setText(Total);
+					textField_12.setText(Total);
+					textField_3.setText("ECONOMY");
+					textField_4.setText("ONE WAY");
+					textField_5.setText("ONE");
+					textField_6.setText("NIL");
+				}
+				else if ((rdbtnEconomy.isSelected()) && (rdbtnReturn.isSelected()) && (rdbtnAdult.isSelected()) && comboBox.getSelectedItem().equals("Gangtok"))
+				{
+					totalCost =(tax *MilesK20*eco)/100;
+					String sTax= String.format("$%.2f", totalCost);
+					textField.setText(sTax);
+					String subTotal= String.format("$%.2f", MilesK20*2);
+					textField_1.setText(subTotal);
+					String Total=String.format("$%.2f", (MilesK20+totalCost)*2);
+					textField_2.setText(Total);
+					textField_12.setText(Total);
+					textField_3.setText("ECONOMY");
+					textField_4.setText("RETURN");
+					textField_5.setText("ONE");
+					textField_6.setText("NIL");
+				}
+				else if ((rdbtnEconomy.isSelected()) && (rdbtnReturn.isSelected()) && (rdbtnChild.isSelected()) && comboBox.getSelectedItem().equals("Gangtok"))
+				{
+					totalCost =(tax *MilesK20*eco)/100;
+					String sTax= String.format("$%.2f", totalCost-18);
+					textField.setText(sTax);
+					String subTotal= String.format("$%.2f", MilesK20*2);
+					textField_1.setText(subTotal);
+					String Total=String.format("$%.2f", ((MilesK20+totalCost)*2)-18);
+					textField_2.setText(Total);
+					textField_12.setText(Total);
+					textField_3.setText("ECONOMY");
+					textField_4.setText("RETURN");
+					textField_5.setText("NIL");
+					textField_6.setText("ONE");
+				}
+				else if ((rdbtnEconomy.isSelected()) && (rdbtnSingle.isSelected()) && (rdbtnChild.isSelected()) && comboBox.getSelectedItem().equals("Gangtok"))
+				{
+					totalCost =(tax *MilesK20*eco)/100;
+					String sTax= String.format("$%.2f", totalCost-18);
+					textField.setText(sTax);
+					String subTotal= String.format("$%.2f", MilesK20);
+					textField_1.setText(subTotal);
+					String Total=String.format("$%.2f", (MilesK20+totalCost)-18);
+					textField_2.setText(Total);
+					textField_12.setText(Total);
+					textField_3.setText("FIRST CLASS");
+					textField_4.setText("SINGLE");
+					textField_5.setText("NIL");
+					textField_6.setText("ONE");
+				}
+				else if ((rdbtnFirstClass.isSelected()) && (rdbtnSingle.isSelected()) && (rdbtnAdult.isSelected()) && comboBox.getSelectedItem().equals("Gangtok"))
+				{
+					totalCost =(tax *MilesK20*fclass)/100;
+					String sTax= String.format("$%.2f", totalCost);
+					textField.setText(sTax);
+					String subTotal= String.format("$%.2f", MilesK20);
+					textField_1.setText(subTotal);
+					String Total=String.format("$%.2f", MilesK20+totalCost);
+					textField_2.setText(Total);
+					textField_12.setText(Total);
+					textField_3.setText("FIRST CLASS");
+					textField_4.setText("ONE WAY");
+					textField_5.setText("ONE");
+					textField_6.setText("NIL");
+				}
+				else if ((rdbtnFirstClass.isSelected()) && (rdbtnReturn.isSelected()) && (rdbtnAdult.isSelected()) && comboBox.getSelectedItem().equals("Gangtok"))
+				{
+					totalCost =(tax *MilesK20*fclass)/100;
+					String sTax= String.format("$%.2f", totalCost);
+					textField.setText(sTax);
+					String subTotal= String.format("$%.2f", MilesK20*2);
+					textField_1.setText(subTotal);
+					String Total=String.format("$%.2f", (MilesK20+totalCost)*2);
+					textField_2.setText(Total);
+					textField_12.setText(Total);
+					textField_3.setText("FIRST CLASS");
+					textField_4.setText("RETURN");
+					textField_5.setText("ONE");
+					textField_6.setText("NIL");
+				}
+				else if ((rdbtnFirstClass.isSelected()) && (rdbtnReturn.isSelected()) && (rdbtnChild.isSelected()) && comboBox.getSelectedItem().equals("Gangtok"))
+				{
+					totalCost =(tax *MilesK20*fclass)/100;
+					String sTax= String.format("$%.2f", totalCost-18);
+					textField.setText(sTax);
+					String subTotal= String.format("$%.2f", MilesK20*2);
+					textField_1.setText(subTotal);
+					String Total=String.format("$%.2f", ((MilesK20+totalCost)*2)-18);
+					textField_2.setText(Total);
+					textField_12.setText(Total);
+					textField_3.setText("FIRST CLASS");
+					textField_4.setText("RETURN");
+					textField_5.setText("NIL");
+					textField_6.setText("ONE");
+				}
+				else 
+				{
+					totalCost =(tax *MilesK20*fclass)/100;
+					String sTax= String.format("$%.2f", totalCost-18);
+					textField.setText(sTax);
+					String subTotal= String.format("$%.2f", MilesK20);
+					textField_1.setText(subTotal);
+					String Total=String.format("$%.2f", (MilesK20+totalCost)-18);
+					textField_2.setText(Total);
+					textField_12.setText(Total);
+					textField_3.setText("FIRST CLASS");
+					textField_4.setText("SINGLE");
+					textField_5.setText("NIL");
+					textField_6.setText("ONE");
+				}
+
+
+				
+				
+				
+				
+				
+				
+			}
+		});
+		btnTotal.setToolTipText("Total Cost of System");
+		btnTotal.setFont(new Font("Tahoma", Font.BOLD, 30));
+		btnTotal.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				//======================Time=========================
+				Calendar timer = Calendar.getInstance();
+				timer.getTime();
+				SimpleDateFormat tTime=new SimpleDateFormat("HH:mm:ss");
+				textField_10.setText(tTime.format(timer.getTime()));
+				//======================Date==========================
+				SimpleDateFormat Tdate= new SimpleDateFormat("dd:MMM:yyyy");
+				textField_9.setText(Tdate.format(timer.getTime()));
+				
+				textField_7.setText("Kolkata *");
+				textField_8.setText((String)comboBox.getSelectedItem()+" *");
+				//================Random Generation===================
+				int num1;
+				String q1="";
+				num1=1325+(int) (Math.random()*4328);
+				q1+=num1+1325;
+				textField_11.setText(q1);
+				//=====================================================
+				textField_13.setText("Any");
+				
+				
+				
+				
+			}
+		});
+		btnTotal.setBounds(81, 522, 155, 51);
+		frame.getContentPane().add(btnTotal);
+		
+		JButton btnReset = new JButton("RESET");
+		btnReset.setToolTipText("Reset System");
+		btnReset.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				textField.setText(null);
+				textField_1.setText(null);
+				textField_2.setText(null);
+				rdbtnAdult.setSelected(false);
+				rdbtnChild.setSelected(false);
+				rdbtnStandard.setSelected(false);
+				rdbtnEconomy.setSelected(false);
+				rdbtnFirstClass.setSelected(false);
+				comboBox.setSelectedItem("Destination");
+				rdbtnSingle.setSelected(false);
+				rdbtnReturn.setSelected(false);
+				textField_3.setText(null);
+				textField_4.setText(null);
+				textField_5.setText(null);
+				textField_6.setText(null);
+				textField_7.setText(null);
+				textField_8.setText(null);
+				textField_9.setText(null);
+				textField_10.setText(null);
+				textField_11.setText(null);
+				textField_12.setText(null);
+				textField_13.setText(null);
+			}
+		});
+		btnReset.setFont(new Font("Tahoma", Font.BOLD, 30));
+		btnReset.setBounds(247, 522, 146, 51);
+		frame.getContentPane().add(btnReset);
+		
+		JButton btnExit = new JButton("EXIT");
+		btnExit.setToolTipText("Exit System");
+		btnExit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				frame = new JFrame("Exit");
+				if(JOptionPane.showConfirmDialog(frame, "Confirm if you want to exit","Bus Resevationn System",
+					JOptionPane.YES_NO_OPTION)==JOptionPane.YES_NO_OPTION){
+					System.exit(0);
+					
+				}
+					
+				
+			}
+		});
+		btnExit.setFont(new Font("Tahoma", Font.BOLD, 30));
+		btnExit.setBounds(405, 522, 119, 51);
+		frame.getContentPane().add(btnExit);
+		
+		textField = new JTextField();
+		textField.setHorizontalAlignment(SwingConstants.CENTER);
+		textField.setFont(new Font("Tahoma", Font.BOLD, 20));
+		textField.setBounds(228, 389, 144, 31);
+		frame.getContentPane().add(textField);
+		textField.setColumns(10);
+		
+		textField_1 = new JTextField();
+		textField_1.setFont(new Font("Tahoma", Font.BOLD, 20));
+		textField_1.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_1.setBounds(228, 431, 144, 31);
+		frame.getContentPane().add(textField_1);
+		textField_1.setColumns(10);
+		
+		textField_2 = new JTextField();
+		textField_2.setFont(new Font("Tahoma", Font.BOLD, 20));
+		textField_2.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_2.setBounds(228, 467, 146, 31);
+		frame.getContentPane().add(textField_2);
+		textField_2.setColumns(10);
+		
+		JSeparator separator_3 = new JSeparator();
+		separator_3.setOrientation(SwingConstants.VERTICAL);
+		separator_3.setBounds(541, 181, 8, 393);
+		frame.getContentPane().add(separator_3);
+		
+		JLabel lblClass = new JLabel("CLASS");
+		lblClass.setFont(new Font("Tahoma", Font.BOLD, 30));
+		lblClass.setBounds(556, 181, 172, 52);
+		frame.getContentPane().add(lblClass);
+		
+		JLabel lblAdult = new JLabel("ADULT");
+		lblAdult.setFont(new Font("Tahoma", Font.BOLD, 30));
+		lblAdult.setBounds(927, 181, 138, 52);
+		frame.getContentPane().add(lblAdult);
+		
+		JLabel lblTicketType = new JLabel("TICKET TYPE");
+		lblTicketType.setFont(new Font("Tahoma", Font.BOLD, 30));
+		lblTicketType.setBounds(700, 181, 200, 52);
+		frame.getContentPane().add(lblTicketType);
+		
+		JLabel lblChild = new JLabel("CHILD");
+		lblChild.setFont(new Font("Tahoma", Font.BOLD, 30));
+		lblChild.setBounds(1059, 181, 172, 52);
+		frame.getContentPane().add(lblChild);
+		
+		textField_3 = new JTextField();
+		textField_3.setFont(new Font("Tahoma", Font.BOLD, 20));
+		textField_3.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_3.setColumns(10);
+		textField_3.setBounds(552, 246, 138, 31);
+		frame.getContentPane().add(textField_3);
+		
+		textField_4 = new JTextField();
+		textField_4.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_4.setFont(new Font("Tahoma", Font.BOLD, 20));
+		textField_4.setColumns(10);
+		textField_4.setBounds(710, 246, 153, 31);
+		frame.getContentPane().add(textField_4);
+		
+		textField_5 = new JTextField();
+		textField_5.setFont(new Font("Tahoma", Font.BOLD, 20));
+		textField_5.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_5.setColumns(10);
+		textField_5.setBounds(890, 246, 138, 31);
+		frame.getContentPane().add(textField_5);
+		
+		textField_6 = new JTextField();
+		textField_6.setFont(new Font("Tahoma", Font.BOLD, 20));
+		textField_6.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_6.setColumns(10);
+		textField_6.setBounds(1048, 246, 138, 31);
+		frame.getContentPane().add(textField_6);
+		
+		JSeparator separator_4 = new JSeparator();
+		separator_4.setBounds(554, 225, 632, 12);
+		frame.getContentPane().add(separator_4);
+		
+		JSeparator separator_5 = new JSeparator();
+		separator_5.setBounds(562, 297, 631, 12);
+		frame.getContentPane().add(separator_5);
+		
+		JLabel lblFrom = new JLabel("From");
+		lblFrom.setFont(new Font("Tahoma", Font.BOLD, 30));
+		lblFrom.setBounds(572, 321, 85, 31);
+		frame.getContentPane().add(lblFrom);
+		
+		JLabel lblTo = new JLabel("To");
+		lblTo.setFont(new Font("Tahoma", Font.BOLD, 30));
+		lblTo.setBounds(572, 380, 85, 31);
+		frame.getContentPane().add(lblTo);
+		
+		JLabel lblDate = new JLabel("Date");
+		lblDate.setFont(new Font("Tahoma", Font.BOLD, 30));
+		lblDate.setBounds(572, 443, 85, 31);
+		frame.getContentPane().add(lblDate);
+		
+		JLabel lblTime = new JLabel("Time");
+		lblTime.setFont(new Font("Tahoma", Font.BOLD, 30));
+		lblTime.setBounds(572, 511, 85, 31);
+		frame.getContentPane().add(lblTime);
+		
+		textField_7 = new JTextField();
+		textField_7.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_7.setFont(new Font("Tahoma", Font.BOLD, 20));
+		textField_7.setColumns(10);
+		textField_7.setBounds(669, 321, 138, 31);
+		frame.getContentPane().add(textField_7);
+		
+		textField_8 = new JTextField();
+		textField_8.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_8.setFont(new Font("Tahoma", Font.BOLD, 20));
+		textField_8.setColumns(10);
+		textField_8.setBounds(669, 380, 138, 31);
+		frame.getContentPane().add(textField_8);
+		
+		textField_9 = new JTextField();
+		textField_9.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_9.setFont(new Font("Tahoma", Font.BOLD, 20));
+		textField_9.setColumns(10);
+		textField_9.setBounds(669, 446, 138, 35);
+		frame.getContentPane().add(textField_9);
+		
+		textField_10 = new JTextField();
+		textField_10.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_10.setFont(new Font("Tahoma", Font.BOLD, 20));
+		textField_10.setColumns(10);
+		textField_10.setBounds(669, 511, 138, 31);
+		frame.getContentPane().add(textField_10);
+		
+		JSeparator separator_6 = new JSeparator();
+		separator_6.setOrientation(SwingConstants.VERTICAL);
+		separator_6.setBounds(834, 309, 8, 264);
+		frame.getContentPane().add(separator_6);
+		
+		JLabel lblTicketNo = new JLabel("Ticket no:");
+		lblTicketNo.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTicketNo.setFont(new Font("Tahoma", Font.BOLD, 30));
+		lblTicketNo.setBounds(876, 321, 172, 31);
+		frame.getContentPane().add(lblTicketNo);
+		
+		textField_11 = new JTextField();
+		textField_11.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_11.setFont(new Font("Tahoma", Font.BOLD, 20));
+		textField_11.setColumns(10);
+		textField_11.setBounds(876, 368, 172, 31);
+		frame.getContentPane().add(textField_11);
+		
+		JLabel lblPrice = new JLabel("Price:");
+		lblPrice.setHorizontalAlignment(SwingConstants.CENTER);
+		lblPrice.setFont(new Font("Tahoma", Font.BOLD, 30));
+		lblPrice.setBounds(876, 412, 172, 31);
+		frame.getContentPane().add(lblPrice);
+		
+		textField_12 = new JTextField();
+		textField_12.setFont(new Font("Tahoma", Font.BOLD, 20));
+		textField_12.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_12.setColumns(10);
+		textField_12.setBounds(876, 450, 172, 31);
+		frame.getContentPane().add(textField_12);
+		
+		JLabel lblRoute = new JLabel("Route:");
+		lblRoute.setHorizontalAlignment(SwingConstants.CENTER);
+		lblRoute.setFont(new Font("Tahoma", Font.BOLD, 30));
+		lblRoute.setBounds(876, 494, 172, 31);
+		frame.getContentPane().add(lblRoute);
+		
+		textField_13 = new JTextField();
+		textField_13.setFont(new Font("Tahoma", Font.BOLD, 20));
+		textField_13.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_13.setColumns(10);
+		textField_13.setBounds(876, 543, 172, 31);
+		frame.getContentPane().add(textField_13);
+	}
+}
